@@ -1,4 +1,4 @@
-package models
+package group_models
 
 import (
 	"IM_Server/common/common_Model"
@@ -9,7 +9,7 @@ import (
 type GroupVerify struct {
 	gorm.Model
 	GroupID              uint                               `json:"groupID"`                           // 群
-	GroupModel           GroupModel                         `gorm:"foreignKey:GroupID" json:"-"`       // 群
+	GroupModel           Group                              `gorm:"foreignKey:GroupID" json:"-"`       // 群
 	UserID               uint                               `json:"userID"`                            // 需要加群或者是退群的用户id
 	Status               int8                               `json:"status"`                            // 状态 0 未操作 1 同意 2 拒绝 3 忽略
 	AdditionalMessages   string                             `gorm:"size:32" json:"additionalMessages"` // 附加消息

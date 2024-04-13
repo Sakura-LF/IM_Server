@@ -1,4 +1,4 @@
-package models
+package group_models
 
 import (
 	"IM_Server/common/common_Model"
@@ -6,7 +6,7 @@ import (
 )
 
 // GroupModel 群组表
-type GroupModel struct {
+type Group struct {
 	gorm.Model
 	Title                string                             `gorm:"32" json:"title"`      // 群名
 	Abstract             string                             `gorm:"128" json:"abstract"`  // 简介

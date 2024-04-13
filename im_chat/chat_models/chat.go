@@ -1,11 +1,11 @@
-package models
+package chat_models
 
 import (
 	"IM_Server/common/common_Model"
 	"gorm.io/gorm"
 )
 
-type ChatModel struct {
+type Chat struct {
 	gorm.Model
 	SendUserID uint                    `json:"sendUserID"`
 	RevUserID  uint                    `json:"revUserID"`
