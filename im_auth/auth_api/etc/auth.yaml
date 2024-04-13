@@ -1,0 +1,8 @@
+Name: auth
+Host: 0.0.0.0
+Port: 8888
+Mysql:
+  DataSource: root:mysql_MtJE6x@tcp(154.8.197.123:3306)/im_server?charset=utf8mb4&parseTime=True&loc=Local
+Auth:
+  AccessSecret: SakurasZ123
+  AccessExpire: 3600
