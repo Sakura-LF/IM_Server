@@ -10,26 +10,14 @@ type LoginRequest struct {
 	Password string `json:"password"`
 }
 
-type LoginResponse struct {
-	Code int       `json:"code"`
-	Data LoginInfo `json:"data"`
-	Msg  string    `json:"msg"`
-}
-
-type OpenLoginInfo struct {
+type OpenLoginResponse struct {
 	Name string `json:"name"`
 	Icon string `json:"icon"`
 	Href string `json:"href"` // 跳转地址
 }
 
-type OpenLoginInfoResponse struct {
-	Code int             `json:"code"`
-	Data []OpenLoginInfo `json:"data"`
-	Msg  string          `json:"msg"`
-}
-
 type Response struct {
-	Code int    `json:"code"`
-	Data string `json:"data"`
-	Msg  string `json:"msg"`
+	Code int         `json:"code"`
+	Msg  string      `json:"msg"`
+	Data interface{} `json:"data"`
 }

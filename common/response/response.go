@@ -19,12 +19,12 @@ func Response(r *http.Request, w http.ResponseWriter, res any, err error) {
 			Data:    nil,
 		}
 		httpx.WriteJson(w, http.StatusOK, body)
-	} else {
-		body := Body{
-			Code:    200,
-			Message: err,
-			Data:    res,
-		}
-		httpx.WriteJson(w, http.StatusOK, body)
 	}
+	body := Body{
+		Code:    200,
+		Message: err,
+		Data:    res,
+	}
+	httpx.WriteJson(w, http.StatusOK, body)
+
 }

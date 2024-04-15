@@ -20,11 +20,12 @@ func loginHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 		l := logic.NewLoginLogic(r.Context(), svcCtx)
 		resp, err := l.Login(&req)
 		if err != nil {
-			httpx.ErrorCtx(r.Context(), w, err)
-			//httpx.WriteJson(w, http.StatusBadRequest)
+			//httpx.ErrorCtx(r.Context(), w, err)
+			httpx.ErrorCtx(r.Context(), w, err, func(w http.ResponseWriter, err error) {
+				httpx.WriteJsonCtx(r.Context(), w, resp.Code, resp)
+			})
 		} else {
 			httpx.OkJsonCtx(r.Context(), w, resp)
 		}
-		//response.Response(r, w, resp, err)
 	}
 }
