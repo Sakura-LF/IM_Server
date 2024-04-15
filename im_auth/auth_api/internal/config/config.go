@@ -7,8 +7,14 @@ type Config struct {
 	Mysql struct {
 		DataSource string
 	}
+	Redis struct {
+		Addr     string
+		UserName string
+		Pwd      string
+		DB       int
+	}
 	Auth struct {
 		AccessSecret string
-		AccessExpire int64
+		AccessExpire int
 	}
 }

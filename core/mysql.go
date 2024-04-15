@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	"github.com/zeromicro/go-zero/core/logx"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -35,7 +36,7 @@ func InitMysql(MysqlDataSource string) *gorm.DB {
 	if err != nil {
 		log.Fatalf(fmt.Sprintf("[%s] mysql连接失败", MysqlDataSource))
 	} else {
-		fmt.Println("数据库连接成功")
+		logx.Info("Mysql init success")
 	}
 	sqlDB, _ := db.DB()
 	sqlDB.SetMaxIdleConns(10)               // 最大空闲连接数
