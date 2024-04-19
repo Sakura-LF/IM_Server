@@ -1,2 +1,17 @@
 Addr: 127.0.0.1:18080
 Etcd: 154.8.197.123:2379
+
+# 日志配置
+ZeroLogConfig:
+  Level: debug
+  # development or production
+  Pattern: development
+  OutPut: log
+# 日志轮换(分割配置)
+LogRotate:
+  Filename: service.log
+  MaxSize: 1
+  MaxBackups: 3
+  MaxAge: 7
+  Compress: true
+

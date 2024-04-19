@@ -19,7 +19,7 @@ import (
 //		Logger: mysqlLogger,
 //	})
 //	if err != nil {
-//		log.Fatalf(fmt.Sprintf("[%s] mysql连接失败", dsn))
+//		logs.Fatalf(fmt.Sprintf("[%s] mysql连接失败", dsn))
 //	}
 //	sqlDB, _ := db.DB()
 //	sqlDB.SetMaxIdleConns(10)               // 最大空闲连接数
