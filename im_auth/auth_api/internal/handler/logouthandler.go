@@ -11,9 +11,14 @@ import (
 func logoutHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		l := logic.NewLogoutLogic(r.Context(), svcCtx)
-		resp, err := l.Logout()
+		token := r.Header.Get("token")
+
+		resp, err := l.Logout(token)
 		if err != nil {
-			httpx.ErrorCtx(r.Context(), w, err)
+			httpx.ErrorCtx(r.Context(), w, err, func(w http.ResponseWriter, err error) {
+				httpx.WriteJsonCtx(r.Context(), w, resp.Code, resp)
+			})
+			//httpx.ErrorCtx(r.Context(), w, err)
 		} else {
 			httpx.OkJsonCtx(r.Context(), w, resp)
 		}

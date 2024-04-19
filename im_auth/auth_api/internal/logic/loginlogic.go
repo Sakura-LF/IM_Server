@@ -29,7 +29,16 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 
 func (l *LoginLogic) Login(req *types.LoginRequest) (resp *types.Response, err error) {
 	var user auth_models.User
-	//
+
+	if req.UserName == "" || req.Password == " " {
+		err = errors.New("请输入用户名或密码")
+		return &types.Response{
+			Code: 400,
+			Data: nil,
+			Msg:  err.Error(),
+		}, err
+	}
+
 	if err = l.svcCtx.DB.Take(&user, "id = ? ", req.UserName).Error; err != nil {
 		err = errors.New("用户名或密码错误")
 		return &types.Response{

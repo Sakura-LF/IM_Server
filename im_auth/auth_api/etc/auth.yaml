@@ -8,6 +8,8 @@ Redis:
   UserName: default
   Pwd: jhkdjhkjdhsIUTYURTU_5XfrYj
   DB: 0
+Etcd:
+  Addr: 154.8.197.123:2379
 Auth:
   AccessSecret: Sakura123
   AccessExpire:   3600

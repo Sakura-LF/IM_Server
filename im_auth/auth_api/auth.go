@@ -1,6 +1,7 @@
 package main
 
 import (
+	"IM_Server/common/etcd"
 	"flag"
 	"fmt"
 
@@ -25,6 +26,8 @@ func main() {
 
 	ctx := svc.NewServiceContext(c)
 	handler.RegisterHandlers(server, ctx)
+
+	etcd.PutService(c.Etcd.Addr, c.Name+"_api", fmt.Sprintf("%s:%d", c.Host, c.Port))
 
 	fmt.Printf("Starting server at %s:%d...\n", c.Host, c.Port)
 	server.Start()
