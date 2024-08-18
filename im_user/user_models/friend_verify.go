@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// FriendVerifyModel 好友验证表
+// FriendVerify  好友验证表
 type FriendVerify struct {
 	gorm.Model
 	SendUserID           uint                               `json:"sendUserID"`                         // 发起验证方

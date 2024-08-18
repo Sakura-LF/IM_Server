@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// UserConfig 用户配置表
+// UserConf  用户配置表
 type UserConf struct {
 	gorm.Model
 	UserID               uint                               `json:"userID"`

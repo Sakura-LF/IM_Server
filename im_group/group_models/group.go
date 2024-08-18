@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// GroupModel 群组表
+// Group  群组表
 type Group struct {
 	gorm.Model
 	Title                string                             `gorm:"32" json:"title"`      // 群名
