@@ -7,7 +7,7 @@ import (
 
 // HashPwd Hash 密码
 func HashPwd(pwd string) string {
-	hashPwd, err := bcrypt.GenerateFromPassword([]byte(pwd), bcrypt.MinCost)
+	hashPwd, err := bcrypt.GenerateFromPassword([]byte(pwd), bcrypt.MaxCost)
 	if err != nil {
 		log.Println(err)
 	}

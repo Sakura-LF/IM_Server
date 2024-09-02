@@ -25,7 +25,6 @@ func TestGenToken(t *testing.T) {
 		want    bool
 		wantErr bool
 	}{
-		// TODO: Add test cases.
 		{
 			name: "JwtTest",
 			args: args{
